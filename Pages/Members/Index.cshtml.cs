@@ -20,11 +20,11 @@ namespace TeamManagement.Pages.Members
 
         public IList<Member> Member { get;set; }
 
-        /* 
-        public async Task OnGetAsync()
+        
+        public void OnGet()
         {
-            Member = await _context.Members.ToListAsync();
+            Member = _context.Members.Include(tm => tm.TaskMembers).ThenInclude(t => t.Task).ToList();
         }
-        */
+        
     }
 }

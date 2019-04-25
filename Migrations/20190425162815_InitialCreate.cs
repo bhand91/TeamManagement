@@ -13,8 +13,8 @@ namespace TeamManagement.Migrations
                 {
                     MemberID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    MemberName = table.Column<string>(nullable: true),
-                    MemberRole = table.Column<int>(nullable: true)
+                    LastName = table.Column<string>(nullable: true),
+                    FirstName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -43,7 +43,9 @@ namespace TeamManagement.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     TaskID = table.Column<int>(nullable: false),
-                    MemberID = table.Column<int>(nullable: false)
+                    MemberID = table.Column<int>(nullable: false),
+                    MemberRole = table.Column<int>(nullable: true),
+                    AssignmentDes = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

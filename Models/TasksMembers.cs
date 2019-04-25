@@ -18,6 +18,8 @@ namespace TeamManagement.Models
 
         public Role? MemberRole {get; set;}
 
+        public string AssignmentDes {get; set;}
+
         public Task Task {get; set;}
         public Member Member {get; set;}
 

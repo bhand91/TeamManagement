@@ -21,9 +21,9 @@ namespace TeamManagement.Migrations
                     b.Property<int>("MemberID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("MemberName");
+                    b.Property<string>("FirstName");
 
-                    b.Property<int?>("MemberRole");
+                    b.Property<string>("LastName");
 
                     b.HasKey("MemberID");
 
@@ -51,7 +51,11 @@ namespace TeamManagement.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("AssignmentDes");
+
                     b.Property<int>("MemberID");
+
+                    b.Property<int?>("MemberRole");
 
                     b.Property<int>("TaskID");
 

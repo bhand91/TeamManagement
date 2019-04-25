@@ -9,7 +9,7 @@ using TeamManagement.Models;
 namespace TeamManagement.Migrations
 {
     [DbContext(typeof(TeamManagementContext))]
-    [Migration("20190425031613_InitialCreate")]
+    [Migration("20190425162815_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,9 +23,9 @@ namespace TeamManagement.Migrations
                     b.Property<int>("MemberID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("MemberName");
+                    b.Property<string>("FirstName");
 
-                    b.Property<int?>("MemberRole");
+                    b.Property<string>("LastName");
 
                     b.HasKey("MemberID");
 
@@ -53,7 +53,11 @@ namespace TeamManagement.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("AssignmentDes");
+
                     b.Property<int>("MemberID");
+
+                    b.Property<int?>("MemberRole");
 
                     b.Property<int>("TaskID");
 

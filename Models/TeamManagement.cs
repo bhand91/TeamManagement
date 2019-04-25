@@ -11,5 +11,7 @@ namespace TeamManagement.Models
 
         public DbSet<TeamManagement.Models.Member> Members { get; set; }
         public DbSet<TeamManagement.Models.Task> Tasks {get; set;}
+
+        public DbSet<TeamManagement.Models.TasksMembers> TasksMembers {get; set;}
     }
 }
