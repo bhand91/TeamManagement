@@ -27,7 +27,7 @@ namespace TeamManagement.Pages.Members
                 return NotFound();
             }
 
-            Member = await _context.Members.Include(tm => tm.TaskMembers).ThenInclude(t => t.Task).FirstOrDefaultAsync(m => m.MemberID == id);
+            Member = await _context.Members.Include(tm => tm.TaskMembers).ThenInclude(t => t.Task).AsNoTracking().FirstOrDefaultAsync(m => m.MemberID == id);
 
             if (Member == null)
             {

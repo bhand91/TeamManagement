@@ -1,4 +1,4 @@
-@page
+@page "{id:int?}"
 @model TeamManagement.Pages.Members.DetailsModel
 
 @{
@@ -22,6 +22,32 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Member.LastName)
+        </dd>
+        <dt>
+            
+        </dt>
+        <dd>
+            <table class = "table">
+                <tr>
+                    <th>Task Name</th>
+                    <th>Role</th>
+                    <th>Assignment Description</th>
+                </tr>
+                @foreach (var item in Model.Member.TaskMembers)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Task.TaskName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MemberRole)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AssignmentDes)
+                        </td>
+                    </tr>
+                }
+            </table>
         </dd>
     </dl>
 </div>
